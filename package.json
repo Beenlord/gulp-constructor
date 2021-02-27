@@ -1,0 +1,30 @@
+{
+  "name": "app-name",
+  "version": "1.0.0",
+  "description": "app-name description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Beenlord/gulp-constructor.git"
+  },
+  "keywords": [
+    "app-name"
+  ],
+  "author": "User Name",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Beenlord/gulp-constructor/issues"
+  },
+  "homepage": "https://github.com/Beenlord/gulp-constructor#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-pug": "^4.0.1",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^4.1.0"
+  }
+}
