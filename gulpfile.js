@@ -6,25 +6,25 @@ const del = require('del')
 const { sync, init, reload } = require('browser-sync').create()
 
 function layout() {
-  return src('./src/**.pug')
+  return src(['./src/**/*.pug', '!src/**/_*.pug'])
     .pipe(pug())
     .pipe(dest('./public'))
 }
 
 function style() {
-  return src('./src/scss/**.scss')
+  return src(['./src/**/*.scss', '!src/**/_*.scss'])
     .pipe(scss())
     .pipe(dest('./public/assets/stylesheet'))
 }
 
 function script() {
-  return src('./src/scripts/**.js')
+  return src(['./src/**/*.js', '!src/**/_*.js'])
     .pipe(rigger())
     .pipe(dest('./public/assets'))
 }
 
 function clear() {
-  return del(['./public', '!public/assets', '!public/assets/images', '!public/assets/images/**', '!public/assets/fonts', '!public/assets/fonts/**'])
+  return del(['./public/**/*.html', './public/**/*.css', './public/**/*.js', '!public/**/_*.*'])
 }
 
 function clearAll() {
