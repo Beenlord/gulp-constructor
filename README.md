@@ -5,7 +5,8 @@
 1. Удалите скрытую папку .git
 2. Сконфигурировать файл package.json (по желанию или надобности)
 3. Установить пакеты из npm репозитория командой npm install (Краткая запись: npm i)
-4. Пользуйтесь на здоровье
+4. ...
+5. PROFIT!
 
 Команды:
 1. gulp dev – Запускает localhost и открывает браузер по умолчанию
@@ -17,6 +18,7 @@
 3. gulp layout – Компилирует pug –> html в папку public
 4. gulp style – Компилирует scss –> css в папку public/asssets/stylesheet  
 5. gulp script – Объединяет js файлы в один и сохраняет в папке public/assets
+6. пгдз convertAssets – Конвертирует все изображения с префиксом из папки ./public/assets в формат .webp
 
 В сборке используются следующие расширения: 
 1. gulp-sass - https://www.npmjs.com/package/gulp-sass
