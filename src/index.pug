@@ -1,8 +1,58 @@
 doctype html
-html(lang="ru")
-  
-  include _head
-  
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    
+    link(rel="stylesheet", href="assets/stylesheet/style,css")
+
+    title TO_PIC 
   body 
 
-    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi provident eligendi, vero delectus rem officia assumenda qui sit incidunt nihil maiores enim. Culpa accusantium voluptate aliquid, delectus voluptatibus odit aspernatur.
+    h1 Сборщик борщиков
+    
+    p Комплекс инструментов для быстрого старта при разработке front-end приложений или вёрстке сайтов.
+
+    p Перед началом работы следует: 
+
+    ul 
+      li Удалите скрытую папку .git
+      li Сконфигурировать файл package.json (по желанию или надобности)
+      li Установить пакеты из npm репозитория командой: npm install (Краткая запись: npm i)
+      li ...
+      li PROFIT!
+
+    p Команды:
+
+    ul 
+      li gulp dev – Запускает localhost и открывает браузер по умолчанию
+      li gulp build – Собирает проект в продакшн
+      li gulp assets – Предназначена для работы с медиаконтентом
+      li 
+        ul
+          li cnt - Копирует все пайлы помеченные как *.cnt.* с сохранением пути в каталог ./public
+          li wp - Конвертирует .jpeg и .png изобрадения с префиксом .wp.jpeg и wp.png в папку ./public
+    
+    p Второстепенные команды:
+
+    ul 
+      li gulp clear – Очищает папку public за исключением файлов assets
+      li gulp clear_all – Очищает всё содержимое папки public
+      li gulp layout – Компилирует pug –> html в папку public
+      li gulp style – Компилирует scss –> css в папку public/asssets/stylesheet
+      li gulp script – Объединяет js файлы в один и сохраняет в папке public/assets
+      li gulp wp_convert - конфертирует изображения формата .jpeg, .png с префиксом .wp. в формат .webp и сохраняет в папку ./public с сохранением пути к файлу
+      li gulp transfer - переносит файлы с префиксом .cnt. в папку ./public с сохранением пути к файлу
+
+    p В сборке используются следующие расширения: 
+
+    ul 
+      li gulp-sass - https://www.npmjs.com/package/gulp-sass
+      li gulp-pug - https://www.npmjs.com/package/gulp-pug
+      li gulp-rigger - https://www.npmjs.com/package/gulp-rigger
+      li del - https://www.npmjs.com/package/del
+      li browser-sync - https://www.npmjs.com/package/browser-sync
+      li 
+
+    script(type="text/javascript" src="assets/javascript/main.js") 

@@ -21,7 +21,7 @@ function style() {
     '!src/**/_*.scss'
   ])
     .pipe(scss())
-    .pipe(dest('./public/assets/stylesheet'))
+    .pipe(dest('./public'))
 }
 
 function script() {
@@ -30,16 +30,23 @@ function script() {
     '!src/**/_*.js'
   ])
     .pipe(rigger())
-    .pipe(dest('./public/assets'))
+    .pipe(dest('./public'))
 }
 
 function convertAssets() {
   return src([
-    './public/assets/**/*.wp.jpg',
-    './public/assets/**/*.wp.png'
+    './src/**/*.wp.jpg',
+    './sec/**/*.wp.png'
   ])
     .pipe(webp())
-    .pipe(dest('./public/assets'))
+    .pipe(dest('./public'))
+}
+
+function transfer() {
+  return src([
+    './src/**/*.cnt.*'
+  ])
+    .pipe(dest('./public'))
 }
 
 function clear() {
@@ -68,9 +75,11 @@ function serve() {
 exports.layout = layout
 exports.script = script
 exports.style = style
-exports.convertAssets = convertAssets
+exports.wp_convert = convertAssets
+exports.transfer = transfer
 exports.clear = clear
 exports.clear_all = clearAll
 
-exports.build = series(clear, layout, script, style)
+exports.build = series(clear, transfer, convertAssets, layout, script, style)
+exports.assets = series(clearAll, transfer, convertAssets)
 exports.dev = series(clear, layout, script, style, serve)
